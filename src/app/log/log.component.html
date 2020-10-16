@@ -1,0 +1,23 @@
+
+<div class="container-fluid">
+<table class="ui-table">
+    <thead>
+        <tr>
+            <th>SNo.</th>
+            <th>Predicted</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of logdata | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{data[0]}}</td>
+            <td>{{data[1]}}</td>
+            <td>{{data[2]}}</td>
+            <td>{{data[3]}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="control"><pagination-controls class="my-pagination page-item" (pageChange)="p = $event"></pagination-controls></div>
+</div>

@@ -1,0 +1,50 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+<section>
+    <div class="container reg shadow p-3 mb-5 bg-white rounded">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+          <div class="row">
+            <div class="col text-center regtitle">
+              <h1 style="color:black;">Register</h1>
+
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-4">
+              <input type="text" class="form-control" placeholder="Username"  name="username"  formControlName="username">
+            </div>
+          </div>
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <input type="email" class="form-control" placeholder="Email"  name="email" formControlName="email">
+            </div>
+          </div>
+
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <input type="number" class="form-control" placeholder="Mobile-number"  name="mobile" formControlName="mobile">
+            </div>
+          </div>
+
+
+
+          <div class="row align-items-center mt-4">
+            <div class="col">
+              <input #pwd type="password"  class="form-control" placeholder="Password"  name="password"  formControlName="password">
+            </div>
+            <div class="col">
+              <input #cpwd type="password"  class="form-control" placeholder="Confirm Password"  name="confirm"  formControlName="confirm">
+            </div>
+          </div>
+          <div class="row justify-content-start mt-4">
+            <div class="col">
+              <button class="btn btn-primary mt-4 regbutton" [disabled]="!confirmpassword() || !signUpForm.valid"  aria-describedby="cpwdhelp"  type="submit">Submit</button>
+              <small id="cpwdhelp" class="form-text" style="color: red;" *ngIf=" !confirmpassword()">Passwords are not matching</small>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </form>

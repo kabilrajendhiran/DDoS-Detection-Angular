@@ -1,0 +1,19 @@
+.rounded-circle{
+    width: 100px;
+    height: 100px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.start{
+    float: left;
+    margin-right: 46vw;
+}
+
+
+.result{
+    text-align: center;
+}
+

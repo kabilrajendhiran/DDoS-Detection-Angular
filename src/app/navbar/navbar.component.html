@@ -1,0 +1,48 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top" *ngIf="nav.visible">
+    <a class="navbar-brand" [routerLink]="['login']">
+      BATCH-22
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="material-icons">menu</i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+  
+        <div>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" id="menu" [routerLink]="['login']">Login
+            </a>
+          </li>
+  
+          
+        </div>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button class="nav-link btn btn-primary" (click)="logout()">Log Out
+          </button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" [routerLink]="['upload']">Upload
+          </a>
+         
+        <li class="nav-item">
+          <a class="nav-link btn" [routerLink]="['dos']">Predict
+          </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn" [routerLink]="['log']">Log
+        </a>
+    </li>
+
+      </ul>
+    </div>
+  </nav>
+  
+  

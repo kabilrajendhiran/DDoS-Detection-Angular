@@ -1,0 +1,62 @@
+<div class="container" style="margin-bottom: 20px;">
+    <button class="btn btn-lg btn-success" (click)="toggler()">Toggle</button>
+</div>
+
+<div class="container shadow p-3 mb-5 bg-white rounded">
+
+ <div *ngIf="!model_or_training">   
+    <div class="col">
+        <div class="row">
+            <div class="col">
+               <h4> Model File </h4>
+            </div>
+
+            <div class="col">
+                <form>              
+                    <input type="file"  (change)="onFileSelected($event)">
+                    <button *ngIf="modelindication" type="button" class="btn btn-dark" (click)="onUpload()">Upload</button>
+                </form> 
+            </div>
+        </div>
+    </div>
+ </div>
+  
+ 
+ <div *ngIf="model_or_training">
+     <form>
+        <div class="row">
+            <div class="col">
+                <h4>Normal File</h4>
+            </div>
+
+            <div class="col">
+                <input type="file" (change)="onFileSelectedNormal($event)">
+                <button *ngIf="normalIndication" type="button" class="btn btn-dark" (click)="onUploadNormal()">Upload</button>
+            </div>
+        </div>
+
+<br><br>
+        <div class="row">
+            <div class="col">
+                <h4>Dos File</h4>
+            </div>
+
+            <div class="col">
+                <input type="file" (change)="onFileSelectedDos($event)">
+                <button *ngIf="dosIndication" type="button" class="btn btn-dark" (click)="onUploadDos()">Upload</button>
+            </div>
+        </div>
+    </form>   
+    </div>
+<br><br>
+     
+        
+    
+</div>
+<div class="center">
+    <button *ngIf="model_or_training" type="button" class="btn btn-lg btn-success" (click)="training()">Train Model</button>
+</div>   
+
+<div class="center">
+    <button *ngIf="!model_or_training" type="button" class="btn btn-lg btn-primary" (click)="goToPredict()">Predict</button>
+</div>
